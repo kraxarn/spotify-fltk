@@ -5,6 +5,7 @@ main_window::main_window()
 {
 	// Window can be resized
 	resizable(this);
+	size_range(960, 540);
 
 	// Main vertical group containing everything
 	group_v = new Fl_Group(x(), y(), w(), h());
