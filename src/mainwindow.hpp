@@ -2,12 +2,8 @@
 
 #include "FL/Fl.H"
 #include "FL/Fl_Box.H"
-#include "FL/Fl_Pixmap.H"
+#include "FL/Fl_Box.H"
 #include "FL/Fl_Window.H"
-#include "FL/Fl_SVG_Image.H"
-#include "FL/Fl_Menu_Bar.H"
-#include "FL/Fl_Menu_Item.H"
-#include "FL/Fl_Tile.H"
 
 class main_window: public Fl_Window
 {
