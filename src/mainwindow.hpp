@@ -16,11 +16,12 @@ public:
 
 private:
 	const int leftWidth = 250;
-
 	const int rightWidth = 320;
 
-	Fl_Group *group = nullptr;
+	Fl_Group *group_v = nullptr;
+	Fl_Group *group_h = nullptr;
 
+	Fl_Box *box_top = nullptr;
 	Fl_Box *box_left = nullptr;
 	Fl_Box *box_middle = nullptr;
 	Fl_Box *box_right = nullptr;
