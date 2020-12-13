@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mainmenu.hpp"
+#include "leftsidepanel.hpp"
 
 #include "FL/Fl.H"
 #include "FL/Fl_Box.H"
@@ -21,6 +22,7 @@ private:
 
 	main_menu *menu = nullptr;
 
+	left_side_panel *left = nullptr;
 	Fl_Box *box_left = nullptr;
 	Fl_Box *box_middle = nullptr;
 	Fl_Box *box_right = nullptr;

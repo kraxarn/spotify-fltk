@@ -16,10 +16,7 @@ main_window::main_window()
 		group_h = new Fl_Group(group_v->x(), menu->h(),
 			group_v->w(), group_v->h() - menu->h());
 		{
-			box_left = new Fl_Box(Fl_Boxtype::FL_BORDER_BOX,
-				group_h->x(), group_h->y(),
-				leftWidth, group_h->h(),
-				"playlists_library");
+			left = new left_side_panel(*group_h);
 
 			box_middle = new Fl_Box(Fl_Boxtype::FL_BORDER_BOX,
 				leftWidth, group_h->y(),
