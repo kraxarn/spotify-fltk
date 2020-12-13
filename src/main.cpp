@@ -1,6 +1,5 @@
 #include "mainwindow.hpp"
 
-
 int main(int argc, char **argv)
 {
 	// Create and show window

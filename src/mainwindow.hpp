@@ -1,5 +1,7 @@
 #pragma once
 
+#include "mainmenu.hpp"
+
 #include "FL/Fl.H"
 #include "FL/Fl_Box.H"
 #include "FL/Fl_Box.H"
@@ -17,7 +19,8 @@ private:
 	Fl_Group *group_v = nullptr;
 	Fl_Group *group_h = nullptr;
 
-	Fl_Box *box_top = nullptr;
+	main_menu *menu = nullptr;
+
 	Fl_Box *box_left = nullptr;
 	Fl_Box *box_middle = nullptr;
 	Fl_Box *box_right = nullptr;

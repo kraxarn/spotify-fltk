@@ -10,14 +10,11 @@ main_window::main_window()
 	// Main vertical group containing everything
 	group_v = new Fl_Group(x(), y(), w(), h());
 	{
-		box_top = new Fl_Box(Fl_Boxtype::FL_BORDER_BOX,
-			group_v->x(), group_v->y(),
-			group_v->w(), 40,
-			"top_menu");
+		menu = new main_menu(*group_v);
 
 		// Main horizontal group containing all panels
-		group_h = new Fl_Group(group_v->x(), box_top->h(),
-			group_v->w(), group_v->h() - box_top->h());
+		group_h = new Fl_Group(group_v->x(), menu->h(),
+			group_v->w(), group_v->h() - menu->h());
 		{
 			box_left = new Fl_Box(Fl_Boxtype::FL_BORDER_BOX,
 				group_h->x(), group_h->y(),
