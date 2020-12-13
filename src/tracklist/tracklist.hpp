@@ -13,8 +13,6 @@
 #include "FL/Fl_Table_Row.H"
 #include "FL/fl_draw.H"
 
-#define COLUMN_COUNT 6
-
 class track_list: public Fl_Table_Row
 {
 private:

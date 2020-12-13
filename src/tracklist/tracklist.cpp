@@ -38,7 +38,7 @@ void track_list::draw_cell(Fl_Table::TableContext context, int r, int c, int x, 
 				fl_draw_box(FL_THIN_UP_BOX, x, y, w, h, FL_BACKGROUND_COLOR);
 				if (c < 9 || true)
 				{
-					fl_font(labelfont(), 16);
+					fl_font(labelfont(), labelsize());
 					fl_color(labelcolor());
 					fl_draw(headers[c].c_str(), x + 2, y, w, h, FL_ALIGN_LEFT);
 					if (c == sort_last_column)
@@ -60,7 +60,7 @@ void track_list::draw_cell(Fl_Table::TableContext context, int r, int c, int x, 
 				fl_color(bg_color);
 				fl_rectf(x, y, w, h);
 
-				fl_font(labelfont(), 16);
+				fl_font(labelfont(), labelsize());
 				fl_color(labelcolor());
 				fl_draw(str.c_str(), x + 2, y, w, h, FL_ALIGN_LEFT);
 			}
