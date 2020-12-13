@@ -41,3 +41,9 @@ std::string icons::get(Icon icon)
 
 	return fmt::format(base, stream.str(), svg);
 }
+
+void icons::set(Fl_Widget &widget, Icon icon)
+{
+	auto svg = new Fl_SVG_Image(nullptr, get(icon).c_str());
+	widget.image(svg);
+}
