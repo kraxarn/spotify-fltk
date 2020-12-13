@@ -14,6 +14,7 @@ enum class Icon
 {
 	APPLICATION_MENU,
 	EDIT_FIND,
+	MEDIA_OPTICAL_AUDIO,
 	MEDIA_PLAYBACK_PAUSE,
 	MEDIA_PLAYBACK_START,
 	MEDIA_PLAYLIST_REPEAT,
@@ -27,7 +28,7 @@ class icons
 public:
 	static std::string get(Icon icon);
 
-	static void set(Fl_Widget &widget, Icon icon);
+	static void set(Fl_Widget &widget, Icon icon, int size = -1);
 
 private:
 	static unsigned int fill_color;

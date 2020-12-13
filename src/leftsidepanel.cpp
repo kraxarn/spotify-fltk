@@ -1,8 +1,9 @@
 #include "leftsidepanel.hpp"
 
 left_side_panel::left_side_panel(Fl_Widget &parent)
-	: library(x() + 10, y() + 30, w() - 20, h() / 2 - 40, "Library"),
-	playlists(x() + 10, y() + (h() / 2) + 20, w() - 20, h() / 2 - 40, "Playlists"),
+	: library(x() + 10, y() + 30, w() - 20, h() / 2 - 40 - 32, "Library"),
+	playlists(x() + 10, y() + (h() / 2) + 20 - 32, w() - 20, h() / 2 - 40 - 42, "Playlists"),
+	album(x(), playlists.y() + playlists.h() + 10, w(), 64),
 	Fl_Group(parent.x(), parent.y(), 250, parent.h())
 {
 	set_style(library);
@@ -30,6 +31,9 @@ left_side_panel::left_side_panel(Fl_Widget &parent)
 	for (auto i = 0; i < 20; i++)
 		playlists.add(fmt::format("Playlist {}", i + 1).c_str());
 	playlists.end();
+
+	icons::set(now_playing, Icon::MEDIA_OPTICAL_AUDIO, 64);
+	now_playing.label("No music playing");
 
 	resizable(playlists);
 	end();

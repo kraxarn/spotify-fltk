@@ -18,6 +18,7 @@ const char *base =
 
 const char *application_menu = "m3 5v2h16v-2h-16m0 5v2h16v-2h-16m0 5v2h16v-2h-16";
 const char *edit_find = "M 9 3 C 5.6759952 3 3 5.6759952 3 9 C 3 12.324005 5.6759952 15 9 15 C 10.481205 15 11.830584 14.465318 12.875 13.582031 L 18.292969 19 L 19 18.292969 L 13.582031 12.875 C 14.465318 11.830584 15 10.481205 15 9 C 15 5.6759952 12.324005 3 9 3 z M 9 4 C 11.770005 4 14 6.2299952 14 9 C 14 11.770005 11.770005 14 9 14 C 6.2299952 14 4 11.770005 4 9 C 4 6.2299952 6.2299952 4 9 4 z";
+const char *media_optical_audio = "M 11 3 C 6.568 3 3 6.568 3 11 C 3 15.432 6.568 19 11 19 L 11 18 C 7.122 18 4 14.878 4 11 C 4 7.122 7.122 4 11 4 C 14.878 4 18 7.122 18 11 L 19 11 C 19 6.568 15.432 3 11 3 z M 11 5 C 7.676 5 5 7.676 5 11 L 8 11 C 8 9.338 9.338 8 11 8 L 11 5 z M 11 9 C 9.892 9 9 9.892 9 11 C 9 12.108 9.892 13 11 13 L 11 12 C 10.446 12 10 11.554 10 11 C 10 10.446 10.446 10 11 10 C 11.554 10 12 10.446 12 11 L 13 11 C 13 9.892 12.108 9 11 9 z M 15 10 L 15 15.277344 C 14.704935 15.106143 14.367047 15 14 15 C 12.892 15 12 15.892 12 17 C 12 18.108 12.892 19 14 19 C 15.108 19 16 18.108 16 17 L 16 12 L 16 11 L 17 11 L 16 10 L 15 10 z";
 const char *media_playback_pause = "m3 3v16h6v-16zm10 0v16h6v-16z";
 const char *media_playback_start = "m3 3v16l16-8z";
 const char *media_playlist_repeat = "m16 5v2h-10c-1.662 0-3 1.338-3 3v1h1v-1c0-1.108 0.892-2 2-2h10v2l3-2.5zm2 6v1c0 1.108-0.892 2-2 2h-10v-2l-3 2.5 3 2.5v-2h10c1.662 0 3-1.338 3-3v-1z";
@@ -62,6 +63,10 @@ std::string icons::get(Icon icon)
 		case Icon::MEDIA_PLAYLIST_SHUFFLE:
 			svg = media_playlist_shuffle;
 			break;
+
+		case Icon::MEDIA_OPTICAL_AUDIO:
+			svg = media_optical_audio;
+			break;
 	}
 
 	std::stringstream stream;
@@ -70,8 +75,11 @@ std::string icons::get(Icon icon)
 	return fmt::format(base, stream.str(), svg);
 }
 
-void icons::set(Fl_Widget &widget, Icon icon)
+void icons::set(Fl_Widget &widget, Icon icon, int size)
 {
 	auto svg = new Fl_SVG_Image(nullptr, get(icon).c_str());
+	if (size > 0)
+		svg->resize(size, size);
+
 	widget.image(svg);
 }
