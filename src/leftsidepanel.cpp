@@ -1,9 +1,9 @@
 #include "leftsidepanel.hpp"
 
 left_side_panel::left_side_panel(Fl_Widget &parent)
-	: library(x() + 10, y() + 30, w() - 20, h() / 2 - 40 - 32, "Library"),
-	playlists(x() + 10, y() + (h() / 2) + 20 - 32, w() - 20, h() / 2 - 40 - 42, "Playlists"),
-	album(x(), playlists.y() + playlists.h() + 10, w(), 64),
+	: library(x() + 10, y() + 30, w() - 20, h() / 2 - 72, "Library"),
+	playlists(library.x(), library.y() + library.h() + 30, library.w(), library.h(), "Playlists"),
+	now_playing(library.x(), playlists.y() + playlists.h() + 10, library.w(), 64),
 	Fl_Group(parent.x(), parent.y(), 250, parent.h())
 {
 	set_style(library);
