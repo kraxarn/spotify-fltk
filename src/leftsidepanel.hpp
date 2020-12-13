@@ -1,7 +1,8 @@
 #pragma once
 
+#include "lib/format.hpp"
+
 #include "FL/Fl_Group.H"
-#include "FL/Fl_Hold_Browser.H"
 #include "FL/Fl_Tree.H"
 
 class left_side_panel: public Fl_Group
@@ -11,5 +12,7 @@ public:
 
 private:
 	Fl_Tree library;
-	Fl_Hold_Browser playlists;
+	Fl_Tree playlists;
+
+	void set_style(Fl_Tree &tree);
 };
