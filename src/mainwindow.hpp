@@ -26,4 +26,6 @@ private:
 	Fl_Box *box_left = nullptr;
 	Fl_Box *box_middle = nullptr;
 	Fl_Box *box_right = nullptr;
+
+	void toggle_side_panel(bool show);
 };

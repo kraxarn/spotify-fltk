@@ -34,5 +34,18 @@ main_window::main_window()
 	group_v->resizable(group_h);
 	group_v->end();
 
+	toggle_side_panel(false);
+
 	end();
+}
+
+void main_window::toggle_side_panel(bool show)
+{
+	int width = show ? -rightWidth : rightWidth;
+	if (show)
+		box_right->show();
+	else
+		box_right->hide();
+
+	box_middle->size(box_middle->w() + width, box_middle->h());
 }
