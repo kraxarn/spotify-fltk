@@ -6,6 +6,7 @@ main_window::main_window()
 	// Window can be resized
 	resizable(this);
 	size_range(960, 540);
+	colors::set(*this);
 
 	// Main vertical group containing everything
 	group_v = new Fl_Group(x(), y(), w(), h());
@@ -18,23 +19,31 @@ main_window::main_window()
 		{
 			left = new left_side_panel(*group_h);
 
-			box_middle = new Fl_Box(Fl_Boxtype::FL_BORDER_BOX,
-				leftWidth, group_h->y(),
-				group_h->w() - leftWidth - rightWidth, group_h->h(),
-				"main_list");
+			tracks = new track_list(*group_h);
 
 			box_right = new Fl_Box(Fl_Boxtype::FL_BORDER_BOX,
-				leftWidth + box_middle->w(), group_h->y(),
+				leftWidth + tracks->w(), group_h->y(),
 				rightWidth, group_h->h(),
 				"artist_search");
 		}
-		group_h->resizable(box_middle);
+		group_h->resizable(tracks);
 		group_h->end();
 	}
 	group_v->resizable(group_h);
 	group_v->end();
 
 	toggle_side_panel(false);
+
+	for (auto i = 0; i < 50; i++)
+	{
+		tracks->add({
+			fmt::format("Track {}", (i % 10) + 1),
+			fmt::format("Artist {}", (i / 10) + 1),
+			fmt::format("Album {}", (i / 10) + 1),
+			fmt::format("0:00"),
+			fmt::format("Added 1 week ago")
+		});
+	}
 
 	end();
 }
@@ -47,5 +56,5 @@ void main_window::toggle_side_panel(bool show)
 	else
 		box_right->hide();
 
-	box_middle->size(box_middle->w() + width, box_middle->h());
+	tracks->size(tracks->w() + width, tracks->h());
 }

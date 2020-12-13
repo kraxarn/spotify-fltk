@@ -2,6 +2,7 @@
 
 #include "lib/format.hpp"
 #include "icons.hpp"
+#include "colors.hpp"
 
 #include "FL/Fl_Group.H"
 #include "FL/Fl_Tree.H"

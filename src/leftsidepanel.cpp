@@ -6,6 +6,7 @@ left_side_panel::left_side_panel(Fl_Widget &parent)
 	now_playing(library.x(), playlists.y() + playlists.h() + 10, library.w(), 64),
 	Fl_Group(parent.x(), parent.y(), 250, parent.h())
 {
+	colors::set(*this);
 	set_style(library);
 	set_style(playlists);
 

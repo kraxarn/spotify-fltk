@@ -2,6 +2,8 @@
 
 #include "mainmenu.hpp"
 #include "leftsidepanel.hpp"
+#include "colors.hpp"
+#include "tracklist/tracklist.hpp"
 
 #include "FL/Fl.H"
 #include "FL/Fl_Box.H"
@@ -21,10 +23,9 @@ private:
 	Fl_Group *group_h = nullptr;
 
 	main_menu *menu = nullptr;
-
 	left_side_panel *left = nullptr;
-	Fl_Box *box_left = nullptr;
-	Fl_Box *box_middle = nullptr;
+	track_list *tracks = nullptr;
+
 	Fl_Box *box_right = nullptr;
 
 	void toggle_side_panel(bool show);
