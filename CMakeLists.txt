@@ -9,8 +9,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Glob source files
 file(GLOB MAIN_SRC "src/*.[hc]pp")
+file(GLOB LIB_SRC "src/lib/*.hpp")
 
-add_executable(spotify-fltk ${MAIN_SRC})
+add_executable(spotify-fltk ${MAIN_SRC} ${LIB_SRC})
 
 set(FLTK_BUILD_TEST OFF)
 set(OPTION_USE_SVG ON)

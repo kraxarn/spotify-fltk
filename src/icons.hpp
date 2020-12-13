@@ -1,5 +1,12 @@
 #pragma once
 
+#include <string>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+
+#include "lib/format.hpp"
+
 enum class Icon
 {
 	APPLICATION_MENU,
@@ -9,5 +16,8 @@ enum class Icon
 class icons
 {
 public:
-	static const char *get(Icon icon);
+	static std::string get(Icon icon);
+
+private:
+	static unsigned int fill_color;
 };

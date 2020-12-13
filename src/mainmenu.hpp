@@ -1,7 +1,7 @@
 #pragma once
 
 #include "icons.hpp"
-#include "imagebutton.hpp"
+#include "iconbutton.hpp"
 
 #include "FL/Fl_Button.H"
 #include "FL/Fl_Group.H"
@@ -13,8 +13,8 @@ public:
 	explicit main_menu(Fl_Widget &parent);
 
 private:
-	image_button *button_menu = nullptr;
-	image_button *button_search = nullptr;
+	icon_button *button_menu = nullptr;
+	icon_button *button_search = nullptr;
 };
 
 

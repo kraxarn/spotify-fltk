@@ -1,13 +1,15 @@
 #pragma once
 
+#include "icons.hpp"
+
 #include "FL/Fl.H"
 #include "FL/Fl_SVG_Image.H"
 #include "FL/Fl_Button.H"
 
-class image_button: public Fl_Button
+class icon_button: public Fl_Button
 {
 public:
-	image_button(int x, int y, int w, int h, const char *svg_data);
+	icon_button(int x, int y, int w, int h, Icon icon);
 
 private:
 	Fl_SVG_Image svg;
