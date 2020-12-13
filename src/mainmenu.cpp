@@ -5,6 +5,13 @@
 
 main_menu::main_menu(Fl_Widget &parent)
 	: button_menu(0, 0, 40, 40),
+	menu_popup{
+		{"&Device", 0, nullptr, nullptr, FL_SUBMENU_POINTER},
+		{"&Settings...", 0, nullptr, nullptr, FL_MENU_DIVIDER},
+		{"&Log out", 0, nullptr, nullptr},
+		{"&Quit", 0, nullptr, nullptr},
+		{nullptr}
+	},
 	button_search(40, 0, 40, 40),
 	// ---
 	previous(90, 0, 40, 40),
@@ -21,6 +28,8 @@ main_menu::main_menu(Fl_Widget &parent)
 	Fl_Group(parent.x(), parent.y(), parent.w(), 40)
 {
 	icons::set(button_menu, Icon::APPLICATION_MENU);
+	button_menu.menu(menu_popup);
+
 	icons::set(button_search, Icon::EDIT_FIND);
 
 	icons::set(previous, Icon::MEDIA_SKIP_BACKWARD);
