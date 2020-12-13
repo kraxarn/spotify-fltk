@@ -1,13 +1,45 @@
 #include "mainmenu.hpp"
 
+#define VOLUME_WIDTH 140
+#define POSITION_WIDTH 120
+
 main_menu::main_menu(Fl_Widget &parent)
-	: Fl_Group(parent.x(), parent.y(), parent.w(), 40)
+	: button_menu(0, 0, 40, 40),
+	button_search(40, 0, 40, 40),
+	// ---
+	previous(90, 0, 40, 40),
+	play_pause(130, 0, 40, 40),
+	next(170, 0, 40, 40),
+	// ---
+	progress(220, 0, w() - VOLUME_WIDTH - 80 - POSITION_WIDTH - 220, 40),
+	// ---
+	position(w() - VOLUME_WIDTH - 80 - POSITION_WIDTH, 0, POSITION_WIDTH, h(), "00:00/00:00"),
+	shuffle(w() - VOLUME_WIDTH - 80, 0, 40, 40),
+	repeat(w() - VOLUME_WIDTH - 40, 0, 40, 40),
+	volume(w() - VOLUME_WIDTH, 0, VOLUME_WIDTH, 40),
+	// ---
+	Fl_Group(parent.x(), parent.y(), parent.w(), 40)
 {
-	button_menu = new Fl_Button(0, 0, 40, 40);
-	icons::set(*button_menu, Icon::APPLICATION_MENU);
+	icons::set(button_menu, Icon::APPLICATION_MENU);
+	icons::set(button_search, Icon::EDIT_FIND);
 
-	button_search = new Fl_Button(40, 0, 40, 40);
-	icons::set(*button_search, Icon::EDIT_FIND);
+	icons::set(previous, Icon::MEDIA_SKIP_BACKWARD);
+	icons::set(play_pause, Icon::MEDIA_PLAYBACK_START);
+	icons::set(next, Icon::MEDIA_SKIP_FORWARD);
 
+	progress.type(FL_HOR_NICE_SLIDER);
+
+	position.labelfont(FL_COURIER);
+
+	icons::set(shuffle, Icon::MEDIA_PLAYLIST_SHUFFLE);
+	icons::set(repeat, Icon::MEDIA_PLAYLIST_REPEAT);
+
+	volume.minimum(0);
+	volume.maximum(100);
+	volume.step(5);
+	volume.value(100);
+	volume.type(FL_HOR_NICE_SLIDER);
+
+	resizable(progress);
 	end();
 }
