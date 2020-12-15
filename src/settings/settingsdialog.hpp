@@ -1,6 +1,15 @@
 #pragma once
 
 #include "../icons.hpp"
+#include "aboutsettings.hpp"
+#include "applicationsettings.hpp"
+#include "interfacesettings.hpp"
+#include "playlistssettings.hpp"
+#include "settingstab.hpp"
+#include "spotifysettings.hpp"
+
+#include <vector>
+#include <memory>
 
 #include "FL/Fl_Window.H"
 #include "FL/Fl_Tabs.H"
@@ -14,9 +23,8 @@ public:
 private:
 	Fl_Tabs tabs;
 
-	Fl_Group *application = nullptr;
-	Fl_Group *interface = nullptr;
-	Fl_Group *spotify = nullptr;
+	std::vector<settings_tab *> settings;
+
 	Fl_Group *playlists = nullptr;
 	Fl_Group *about = nullptr;
 };
