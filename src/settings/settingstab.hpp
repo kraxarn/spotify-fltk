@@ -9,5 +9,3 @@ class settings_tab: public Fl_Tabs
 protected:
 	settings_tab(Fl_Widget &parent, const char *title, Icon icon);
 };
-
-
