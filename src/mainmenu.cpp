@@ -7,7 +7,7 @@ main_menu::main_menu(Fl_Widget &parent)
 	: button_menu(0, 0, 40, 40),
 	menu_popup{
 		{"&Device", 0, nullptr, nullptr, FL_SUBMENU_POINTER},
-		{"&Settings...", 0, nullptr, nullptr, FL_MENU_DIVIDER},
+		{"&Settings...", 0, callback_settings, nullptr, FL_MENU_DIVIDER},
 		{"&Log out", 0, nullptr, nullptr},
 		{"&Quit", 0, nullptr, nullptr},
 		{nullptr}
@@ -63,4 +63,10 @@ main_menu::main_menu(Fl_Widget &parent)
 
 	resizable(progress);
 	end();
+}
+
+void main_menu::callback_settings(Fl_Widget *widget, void *data)
+{
+	auto window = new settings_dialog();
+	window->show();
 }

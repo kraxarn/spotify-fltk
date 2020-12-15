@@ -2,6 +2,7 @@
 
 #include "icons.hpp"
 #include "custombox.hpp"
+#include "settings/settingsdialog.hpp"
 
 #include "FL/Fl_Button.H"
 #include "FL/Fl_Group.H"
@@ -33,4 +34,6 @@ private:
 	Fl_Toggle_Button button_search;
 	Fl_Toggle_Button repeat;
 	Fl_Toggle_Button shuffle;
+
+	static void callback_settings(Fl_Widget *widget, void *data);
 };
