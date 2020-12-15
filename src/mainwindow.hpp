@@ -9,9 +9,9 @@
 #include "FL/Fl.H"
 #include "FL/Fl_Box.H"
 #include "FL/Fl_Box.H"
-#include "FL/Fl_Window.H"
+#include "FL/Fl_Double_Window.H"
 
-class main_window: public Fl_Window
+class main_window: public Fl_Double_Window
 {
 public:
 	main_window();

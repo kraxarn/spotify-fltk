@@ -1,7 +1,7 @@
 #include "mainwindow.hpp"
 
 main_window::main_window()
-	: Fl_Window(1280, 720, "spotify-fltk")
+	: Fl_Double_Window(1280, 720, "spotify-fltk")
 {
 	// Custom dark theme
 	colors::init();
