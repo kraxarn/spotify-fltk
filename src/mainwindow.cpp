@@ -3,10 +3,13 @@
 main_window::main_window()
 	: Fl_Window(1280, 720, "spotify-fltk")
 {
+	// Custom dark theme
+	colors::init();
+	custom_box::init();
+
 	// Window can be resized
 	resizable(this);
 	size_range(960, 540);
-	colors::set(*this);
 
 	// Main vertical group containing everything
 	group_v = new Fl_Group(x(), y(), w(), h());

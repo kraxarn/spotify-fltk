@@ -4,6 +4,7 @@
 #include "leftsidepanel.hpp"
 #include "colors.hpp"
 #include "tracklist/tracklist.hpp"
+#include "custombox.hpp"
 
 #include "FL/Fl.H"
 #include "FL/Fl_Box.H"

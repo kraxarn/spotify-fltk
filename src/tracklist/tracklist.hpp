@@ -3,6 +3,7 @@
 #include "../colors.hpp"
 #include "trackcolumn.hpp"
 #include "trackrow.hpp"
+#include "../custombox.hpp"
 
 #include <algorithm>
 #include <array>

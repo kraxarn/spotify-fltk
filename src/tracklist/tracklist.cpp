@@ -9,8 +9,6 @@ track_list::track_list(Fl_Widget &parent)
 	}),
 	Fl_Table_Row(parent.x() + 250, parent.y(), parent.w() - 570, parent.h())
 {
-	colors::set(*this);
-
 	// #
 	col_width(0, 50);
 	// Length
@@ -35,7 +33,7 @@ void track_list::draw_cell(Fl_Table::TableContext context, int r, int c, int x, 
 		case Fl_Table::CONTEXT_COL_HEADER:
 			fl_push_clip(x, y, w, h);
 			{
-				fl_draw_box(FL_THIN_UP_BOX, x, y, w, h, FL_BACKGROUND_COLOR);
+				fl_draw_box(CUSTOM_BOX, x, y, w, h, FL_BACKGROUND2_COLOR);
 				if (c < 9 || true)
 				{
 					fl_font(labelfont(), labelsize());
@@ -55,7 +53,7 @@ void track_list::draw_cell(Fl_Table::TableContext context, int r, int c, int x, 
 				auto bg_color = row_selected(r)
 					? selection_color()
 					: c == 0
-						? FL_BACKGROUND_COLOR
+						? FL_BACKGROUND2_COLOR
 						: color();
 				fl_color(bg_color);
 				fl_rectf(x, y, w, h);

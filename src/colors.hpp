@@ -5,13 +5,13 @@
 class colors
 {
 public:
-	static const Fl_Color background = 0x212121ff;
-	static const Fl_Color foreground = 0xf5f5f5ff;
 	static const Fl_Color highlight = 0x388e3cff;
 
-	static void set(Fl_Widget &widget)
+	static void init()
 	{
-		widget.color(background, highlight);
+		Fl::background(0x12, 0x12, 0x12);
+		Fl::background2(0x28, 0x28, 0x28);
+		Fl::foreground(0xf5, 0xf5, 0xf5);
 	}
 };
 

@@ -49,6 +49,18 @@ main_menu::main_menu(Fl_Widget &parent)
 	volume.value(100);
 	volume.type(FL_HOR_NICE_SLIDER);
 
+	custom_box::set({
+		&button_menu,
+		&button_search,
+		&previous,
+		&play_pause,
+		&next,
+		&progress,
+		&repeat,
+		&shuffle,
+		&volume
+	});
+
 	resizable(progress);
 	end();
 }
