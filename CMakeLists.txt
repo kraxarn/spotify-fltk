@@ -16,6 +16,6 @@ add_executable(spotify-fltk ${MAIN_SRC} ${SUB_SRC})
 set(FLTK_BUILD_TEST OFF)
 set(OPTION_USE_SVG ON)
 add_subdirectory(fltk)
-include_directories(fltk)
+include_directories(fltk "${CMAKE_BINARY_DIR}/fltk")
 
 target_link_libraries(spotify-fltk PRIVATE fltk fltk_images)
